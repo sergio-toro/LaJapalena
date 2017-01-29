@@ -1,6 +1,6 @@
 # La Japaleña
 
-Theme for [La Japaleña](http://github.com/tryghost/ghost/) blog.
+Theme for [La Japaleña](https://xn--lajapalea-s6a.com) blog.
 
 To download, visit the [releases](https://github.com/sergio-toro/LaJapalena/releases) page.
 
