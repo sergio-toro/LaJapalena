@@ -1,8 +1,8 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
-    "version": "1.3.5",
+    "name": "lajapalena",
+    "description": "Theme for La Japaleña blog. Beautiful, minimal and responsive.",
+    "demo": "https://xn--lajapalea-s6a.com",
+    "version": "1",
     "engines": {
         "ghost": ">=0.9.0 <1.0.0"
     },
@@ -12,9 +12,9 @@
         "mobile": "assets/screenshot-mobile.jpg"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Sergio Toro",
+        "email": "sergio.toro.castano@gmail.com",
+        "url": "https://xn--lajapalea-s6a.com/"
     },
     "gpm": {
         "type": "theme",
@@ -24,13 +24,14 @@
         ]
     },
     "keywords": [
+        "lajapalena",
         "ghost",
         "theme"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/sergio-toro/LaJapalena.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors"
+    "bugs": "https://github.com/sergio-toro/LaJapalena/issues",
+    "contributors": "https://github.com/sergio-toro/LaJapalena/graphs/contributors"
 }
