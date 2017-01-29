@@ -1,10 +1,10 @@
-# Casper
+# La Japaleña
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+Theme for [La Japaleña](http://github.com/tryghost/ghost/) blog.
 
-To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
+To download, visit the [releases](https://github.com/sergio-toro/LaJapalena/releases) page.
 
 ## Copyright & License
 
-Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
-
+Copyright for portions of project La Japaleña are held by Ghost Foundation, 2013-2017 as part of project Casper - Released under the [MIT license](LICENSE). 
+All other copyright for project La Japaleña are held by Sergio Toro, 2017 - Released under the [MIT license](LICENSE).
