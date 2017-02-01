@@ -10,7 +10,10 @@
 
   $document.ready(function () {
 
-    var $postContent = $(".post-content");
+    var
+    $post = $("article.post"),
+    $postContent = $(".post-content");
+
     $postContent.fitVids();
 
     $(".scroll-down").arctic_scroll();
@@ -20,18 +23,57 @@
       $("body").toggleClass("nav-opened nav-closed");
     });
 
-    var $article = $('#LaJapalena-post');
+    $postContent.laJapalenaProgress();
 
-    $article.readingTime({
-      readingTimeTarget: $article.find('.reading-time'),
+    $postContent.readingTime({
+      readingTimeTarget: $post.find('.reading-time'),
       wordsPerMinute: 130,
       lang: 'en',
       error: function(message) {
-        $article.find('.reading-wrapper').remove();
+        $post.find('.reading-wrapper').remove();
       }
     });
 
   });
+
+
+
+  $.fn.laJapalenaProgress = function(userOptions) {
+    var
+    defaults = {
+      content: $(this),
+      throttleTime: 25, // in milliseconds
+    },
+    options = $.extend(defaults, userOptions),
+    $content = options.content,
+    $window = $(window),
+    documentHeight = $(document).height(),
+    contentHeight = $content.height(),
+    contentOffsetTop = $content.offset().top,
+    progressBar = new ToProgress({
+      id: 'top-progress-bar',
+      duration: 0.5
+    }),
+    updateProgressBar = function() {
+      var
+      windowScrollTop = $window.scrollTop(),
+      windowHeight = $window.height(),
+      scrollTop = windowScrollTop && (windowHeight + windowScrollTop - contentOffsetTop),
+      progress = 100 * scrollTop / contentHeight;
+
+      if (progress < 0) {
+        progress = 0;
+      }
+      if (progress > 100) {
+        progress = 100;
+      }
+
+      progressBar.setProgress(progress);
+    };
+    updateProgressBar();
+
+    $window.scroll(_.debounce(updateProgressBar, options.throttleTime));
+  };
 
   // Arctic Scroll by Paul Adam Davis
   // https://github.com/PaulAdamDavis/Arctic-Scroll

@@ -1,0 +1,11 @@
+/**
+ * laJapalenaProgress
+ */
+#top-progress-bar {
+  z-index: 500 !important;
+  background-color: rgba(244,67,54, 1) !important;
+  height: 1px !important;
+  -webkit-box-shadow: 0 0 3px 0 rgba(244,67,54, 1);
+  -moz-box-shadow: 0 0 3px 0 rgba(244,67,54, 1);
+  box-shadow: 0 0 3px 0 rgba(244,67,54, 1);
+}
