@@ -9,3 +9,11 @@
   -moz-box-shadow: 0 0 3px 0 rgba(244,67,54, 1);
   box-shadow: 0 0 3px 0 rgba(244,67,54, 1);
 }
+
+
+.reading-wrapper {
+  color: #2E2E2E;
+}
+.reading-label {
+  font-weight: bold;
+}

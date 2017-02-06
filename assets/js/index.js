@@ -58,8 +58,8 @@
       var
       windowScrollTop = $window.scrollTop(),
       windowHeight = $window.height(),
-      scrollTop = windowScrollTop && (windowHeight + windowScrollTop - contentOffsetTop),
-      progress = 100 * scrollTop / contentHeight;
+      scrollTop = windowScrollTop && (windowScrollTop),
+      progress = 100 * scrollTop / (contentHeight - windowHeight + contentOffsetTop);
 
       if (progress < 0) {
         progress = 0;
