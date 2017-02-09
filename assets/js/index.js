@@ -18,10 +18,10 @@
 
     $(".scroll-down").arctic_scroll();
 
-    $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
-      e.preventDefault();
-      $("body").toggleClass("nav-opened nav-closed");
-    });
+    // $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
+    //   e.preventDefault();
+    //   $("body").toggleClass("nav-opened nav-closed");
+    // });
 
     $postContent.laJapalenaProgress();
 
@@ -39,9 +39,12 @@
 
 
   $.fn.laJapalenaProgress = function(userOptions) {
+    var $this = $(this)
+    if (!$this.length) { return $this }
+
     var
     defaults = {
-      content: $(this),
+      content: $this,
       throttleTime: 25, // in milliseconds
     },
     options = $.extend(defaults, userOptions),
@@ -73,6 +76,8 @@
     updateProgressBar();
 
     $window.scroll(_.debounce(updateProgressBar, options.throttleTime));
+
+    return $this
   };
 
   // Arctic Scroll by Paul Adam Davis
