@@ -1,24 +1,42 @@
 <div class="nav">
-  <h3 class="nav-title">
-    <a class="blog-logo" href="{{@blog.url}}">
-      {{#if @blog.logo}}
-        <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-      {{else}}
-        {{@blog.title}}
-      {{/if}}
+  <div class="row">
+    <div class="col-xs">
+
+      <h3 class="nav-title">
+        <a class="blog-logo" href="{{@blog.url}}">
+          {{#if @blog.logo}}
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+          {{else}}
+            {{@blog.title}}
+          {{/if}}
+        </a>
+      </h3>
+      <ul>
+        {{#foreach navigation}}
+          <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
+            <a href="{{url absolute="true"}}">{{label}}</a>
+          </li>
+        {{/foreach}}
+      </ul>
+
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+
+      <div class="nav-subscribe">
+        {{#if @labs.subscribers}}
+          <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
+        {{else}}
+          <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
+
+  {{#if @blog.navigation}}
+    <a class="menu-button icon-menu" href="#">
+      <span class="word">Menu</span>
     </a>
-  </h3>
-  <ul>
-    {{#foreach navigation}}
-      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation">
-        <a href="{{url absolute="true"}}">{{label}}</a>
-      </li>
-    {{/foreach}}
-  </ul>
-  {{#if @labs.subscribers}}
-    <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
-  {{else}}
-    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
   {{/if}}
 </div>
 <!--span class="nav-cover"></span-->

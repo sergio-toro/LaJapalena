@@ -596,21 +596,27 @@ button {
 /* Navigation */
 
 .nav {
-  display: block;
+  position: relative;
   background: #111;
-  margin-bottom: 0;
-  text-align: left;
+  overflow: hidden;
 }
 
-.nav-title {
+.nav-title, .nav ul {
   display: inline-block;
-  padding: 2rem 3rem;
   margin: 0;
-  font-size: 16px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.nav-title a {
+  display: block;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
   font-weight: 100;
   text-transform: uppercase;
   color: #fff;
-  vertical-align: top;
 }
 
 .nav .blog-logo {
@@ -626,20 +632,18 @@ button {
 }
 
 .nav ul {
-  display: inline-block;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 .nav li {
-  margin: 0;
   display: block;
+  float: left;
+  margin: 0 .5rem 0 0;
 }
 .nav li a {
   display: block;
   text-decoration: none;
-  line-height: 1.4;
-  padding: .5rem 2rem;
+  line-height: 1.6rem;
+  padding: 1.5rem 2rem;
   font-size: 1.4rem;
   overflow: hidden;
   white-space: nowrap;
@@ -668,16 +672,14 @@ button {
   color: #fff;
 }
 
+.nav-subscribe {
+  padding: .5rem 3rem;
+  text-align: right;
+}
+
 .subscribe-button {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  right: 30px;
-  height: 38px;
+  display: inline-block;
+  vertical-align: top;
   padding: 0 20px;
   color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
   text-align: center;
@@ -690,10 +692,59 @@ button {
   background: #fff;
   transition: all ease 0.3s;
 }
+
 .subscribe-button:before {
   font-size: 9px;
   margin-right: 6px;
 }
+
+.menu-button {
+  display: block;
+  position: absolute;
+  top: .7rem;
+  right: 1.6rem;
+  padding: 0 1rem;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 3rem;
+  white-space: nowrap;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+.menu-button:before {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+}
+.menu-button:hover {
+  background: #fff;
+  color: #222;
+}
+.menu-button:focus {
+  color: #fff;
+  background: transparent;
+}
+
+/* When the navigation is closed and there is no cover image */
+.no-cover .menu-button {
+    border-color: #BFC8CD;
+    color: #9EABB3;
+}
+.no-cover .menu-button:hover {
+    border-color: #555;
+    color: #555;
+}
+
 
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
@@ -763,52 +814,6 @@ button {
   height: 38px;
   padding: 1px 0 5px 0;
   width: auto;
-}
-
-.menu-button {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  float: right;
-  height: 38px;
-  padding: 0 15px;
-  border-style: solid;
-  border-width: 1px;
-  opacity: 1;
-  text-align: center;
-  font-size: 12px;
-  text-transform: uppercase;
-  line-height: 35px;
-  white-space: nowrap;
-  border-radius: 3px;
-  transition: all 0.5s ease;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.6);
-}
-.menu-button:before {
-  font-size: 12px;
-  font-weight: bold;
-  margin-right: 6px;
-  position: relative;
-  top: 1px;
-}
-.menu-button:hover {
-  background: #fff;
-  color: #222;
-}
-.menu-button:focus {
-  outline: 0;
-}
-
-/* When the navigation is closed and there is no cover image */
-.no-cover .menu-button {
-    border-color: #BFC8CD;
-    color: #9EABB3;
-}
-.no-cover .menu-button:hover {
-    border-color: #555;
-    color: #555;
 }
 
 /* Special styles when overlaid on an image*/
@@ -1786,6 +1791,38 @@ body.page-template .post-title {
 }
 
 
+
+
+/* ==========================================================================
+   13.2 Media Queries - Smaller than 48em
+   ========================================================================== */
+
+@media only screen and (max-width: 48em) {
+  .nav-opened .nav ul, .nav-opened .nav-subscribe {
+    display: block;
+  }
+
+  .nav ul, .nav-subscribe {
+    display: none;
+  }
+
+  .nav-subscribe {
+    padding-bottom: .5rem;
+    text-align: center;
+  }
+
+  .nav-title a {
+    padding-left: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .menu-button {
+    display: none;
+  }
+}
+
+
 /* ==========================================================================
    13. Media Queries - Smaller than 500px
    ========================================================================== */
@@ -1820,19 +1857,6 @@ body.page-template .post-title {
     height: 30px;
   }
 
-  .menu-button {
-    padding: 0 5px;
-    border-radius: 0;
-    border-width: 0;
-    color: #2e2e2e;
-    background: transparent;
-  }
-  .menu-button:hover {
-    color: #2e2e2e;
-    border-color: transparent;
-    background: none;
-  }
-
   .main-nav.overlay a:hover {
     color: #fff;
     border-color: transparent;
@@ -1841,13 +1865,6 @@ body.page-template .post-title {
 
   .no-cover .main-nav.overlay {
     background: none;
-  }
-  .no-cover .main-nav.overlay .menu-button {
-    border: none;
-  }
-
-  .main-nav.overlay .menu-button {
-    border-color: transparent;
   }
 
   .inner,
