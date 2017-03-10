@@ -17,3 +17,17 @@
 .reading-label {
   font-weight: bold;
 }
+
+/* post-list specific css */
+.post-list .post-image {
+  max-width: 20rem;
+}
+
+.post-list .post-excerpt {
+  padding-left: 2rem;
+}
+
+.post-list .post-excerpt a {
+  text-decoration: none;
+}
+

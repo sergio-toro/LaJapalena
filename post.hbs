@@ -11,19 +11,25 @@
 <main class="content" role="main">
   <article id="LaJapalena-post" class="{{post_class}}">
 
-    <header class="post-header">
-      <h1 class="post-title">{{title}}</h1>
-      <section class="post-meta">
-        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+    <header class="post-main-header {{#if image}}featured-image{{/if}}"
+      {{#if image}}style="background-image: url({{image}}){{/if}}">
 
-        <br />
+      <div class="post-header">
+        <h1 class="post-title">{{title}}</h1>
+        <section class="post-meta">
+          <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
 
-        <span class="reading-wrapper">
-          <span class="reading-label">Reading time:&nbsp;</span>
-          <span class="reading-time"></span>
-        </span>
-      </section>
+          <br />
+
+          <span class="reading-wrapper">
+            <span class="reading-label">Reading time:&nbsp;</span>
+            <span class="reading-time"></span>
+          </span>
+        </section>
+      </div>
     </header>
+
+
 
     <section class="post-content">
       {{content}}

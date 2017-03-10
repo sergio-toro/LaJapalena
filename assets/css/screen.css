@@ -838,6 +838,7 @@ button {
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .page-description {
@@ -848,6 +849,7 @@ button {
   font-family: "Merriweather", serif;
   letter-spacing: 0.01rem;
   color: rgba(255,255,255,0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .no-cover.main-header {
@@ -858,10 +860,12 @@ button {
 
 .no-cover .page-title {
   color: rgba(0,0,0,0.8);
+  box-shadow: none;
 }
 
 .no-cover .page-description {
   color: rgba(0,0,0,0.5);
+  box-shadow: none;
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -884,6 +888,7 @@ button {
   width: 80%;
   max-width: 710px;
   margin: 4rem auto;
+  padding-top: 2rem;
   padding-bottom: 4rem;
   border-bottom: #EBF2F6 1px solid;
   word-wrap: break-word;
@@ -1014,7 +1019,8 @@ body.page-template .post-title {
 
 .post-template .post-header,
 .page-template .post-header {
-   margin-bottom: 3.4rem;
+  margin-bottom: 3.4rem;
+  position: relative;
 }
 
 .post-template .post-title,
@@ -1056,9 +1062,55 @@ body.page-template .post-title {
   display: none;
 }
 
+/* post featured image */
+.post-main-header {
+  display: block;
+}
+
+.post-main-header.featured-image {
+  width: 126%;
+  height: 50vh;
+  max-height: 45rem;
+  padding: 0.6em 0;
+  /* Centers an image by (1) pushing its left edge to the
+     center of its container and (2) shifting the entire image
+     in the opposite direction by half its own width.
+     Works for images that are larger than their containers. */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%); /* for Safari and iOS */
+  -ms-transform: translateX(-50%); /* for IE9 */
+  transform: translateX(-50%);
+
+  background: #222 no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+
+  margin-bottom: 2rem;
+}
+
+.post-main-header.featured-image .post-header {
+  padding: 5rem 13% 0;
+}
+
+.post-main-header.featured-image .post-title {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.post-main-header.featured-image .post-meta,
+.post-main-header.featured-image .reading-wrapper {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+}
+
+.post-main-header.featured-image .post-meta a {
+  color: inherit;
+}
+
 /* Keep images centered, and allow images wider than the main
    text column to break out. */
-.post-content img {
+.post-image img, .post-content img {
   display: block;
   max-width: 126%;
   height: auto;
@@ -1680,7 +1732,8 @@ body.page-template .post-title {
   }
 
   .post {
-    font-size: 0.95em
+    font-size: 0.95em;
+    padding-top: 0;
   }
 
   body:not(.post-template) .post-title {
@@ -1962,11 +2015,22 @@ body.page-template .post-title {
     margin-top: 0;
   }
 
-  .post-content img {
+  .post-image img, .post-content img {
     padding: 0;
     width: calc(100% + 32px); /* expand with to image + margins */
     min-width: 0;
     max-width: 112%; /* fallback when calc doesn't work */
+  }
+
+  .post-main-header.featured-image {
+    width: calc(100% + 32px); /* expand with to image + margins */
+    max-width: 112%; /* fallback when calc doesn't work */
+    height: 35vh;
+    max-height: 30rem;
+  }
+
+  .post-main-header.featured-image .post-header {
+    padding: 3rem 16px 0;
   }
 
   .post-meta {
