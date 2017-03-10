@@ -44,12 +44,16 @@
   </div>
 
   {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  {{!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script> --}}
+  <script type="text/javascript" src="{{asset "js/jquery-1.12.0.min.js"}}"></script>
 
   {{!-- Ghost outputs important scripts and data with this tag --}}
   {{ghost_foot}}
+
+  {{!-- <script type="text/javascript" src="//cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script> --}}
+  <script type="text/javascript" src="{{asset "js/lodash-4.17.4.min.js"}}"></script>
+
   {{!-- Fitvids makes video embeds responsive and awesome --}}
-  <script type="text/javascript" src="//cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/jquery.readingTime.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/toProgress.min.js"}}"></script>
