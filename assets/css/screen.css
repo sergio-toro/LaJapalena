@@ -543,7 +543,7 @@ button {
 .inner {
   position: relative;
   width: 80%;
-  max-width: 910px;
+  max-width: 710px;
   margin: 0 auto;
 }
 
@@ -863,7 +863,7 @@ button {
 .post {
   position: relative;
   width: 80%;
-  max-width: 910px;
+  max-width: 710px;
   margin: 4rem auto;
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -1497,7 +1497,7 @@ body.page-template .post-title {
 .pagination {
   position: relative;
   width: 80%;
-  max-width: 910px;
+  max-width: 710px;
   margin: 4rem auto;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;
