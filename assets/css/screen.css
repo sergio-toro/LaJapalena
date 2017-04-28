@@ -582,17 +582,6 @@ button {
   width: 80%;
 }
 
-.main-nav {
-  position: relative;
-  padding: 35px 40px;
-  margin: 0 0 30px 0;
-}
-
-.main-nav a {
-  text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
-}
-
 /* Navigation */
 
 .nav {
@@ -718,6 +707,8 @@ button {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.6);
   background: transparent;
+
+  font-family: 'Open Sans', sans-serif;
 }
 .menu-button:before {
   font-size: 12px;
@@ -814,20 +805,6 @@ button {
   height: 38px;
   padding: 1px 0 5px 0;
   width: auto;
-}
-
-/* Special styles when overlaid on an image*/
-.main-nav.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  border: none;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
-}
-.no-cover .main-nav.overlay {
-  background: none;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -1087,6 +1064,10 @@ body.page-template .post-title {
   overflow: hidden;
 
   margin-bottom: 2rem;
+}
+
+.post-main-header .post-header {
+  padding: 5rem 0;
 }
 
 .post-main-header.featured-image .post-header {
@@ -1851,12 +1832,29 @@ body.page-template .post-title {
    ========================================================================== */
 
 @media only screen and (max-width: 48em) {
+  .nav-opened .nav {
+    padding-bottom: 25px;
+  }
   .nav-opened .nav ul, .nav-opened .nav-subscribe {
     display: block;
+    margin-top: 10px;
   }
 
   .nav ul, .nav-subscribe {
     display: none;
+  }
+
+  .nav ul li {
+    float: none;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav li.nav-current a, .nav a:hover, .nav a:active, .nav a:focus {
+    background-color: rgba(255, 255, 255, .2);
   }
 
   .nav-subscribe {
@@ -1897,27 +1895,12 @@ body.page-template .post-title {
     padding: 10% 0;
   }
 
-  .main-nav {
-    padding: 5px;
-    margin-bottom: 2rem;
-  }
-
   .blog-logo {
     padding: 5px;
   }
 
   .blog-logo img {
     height: 30px;
-  }
-
-  .main-nav.overlay a:hover {
-    color: #fff;
-    border-color: transparent;
-    background: transparent;
-  }
-
-  .no-cover .main-nav.overlay {
-    background: none;
   }
 
   .inner,
@@ -2027,6 +2010,10 @@ body.page-template .post-title {
     max-width: 112%; /* fallback when calc doesn't work */
     height: 35vh;
     max-height: 30rem;
+  }
+
+  .post-main-header .post-header {
+    padding: 3rem 0;
   }
 
   .post-main-header.featured-image .post-header {
