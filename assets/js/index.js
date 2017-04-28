@@ -23,9 +23,9 @@
       $("body").toggleClass("nav-opened");
     });
 
-    $postContent.laJapalenaProgress();
+    $('.lajapalena-progress').laJapalenaProgress();
 
-    $postContent.readingTime({
+    $('.lajapalena-reading').readingTime({
       readingTimeTarget: $post.find('.reading-time'),
       wordsPerMinute: 130,
       lang: 'en',
