@@ -1063,7 +1063,8 @@ body.page-template .post-title {
   background-size: cover;
   overflow: hidden;
 
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 4rem;
 }
 
 .post-main-header .post-header {
